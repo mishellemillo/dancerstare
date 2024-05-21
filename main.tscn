@@ -12,7 +12,7 @@ script = ExtResource("1_ubqgu")
 position = Vector2(140, 521)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-limit_left = 0
+position = Vector2(442, -10)
 limit_top = 0
 limit_bottom = 0
 limit_smoothed = true
