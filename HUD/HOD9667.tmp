@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3vwfsgjqrj5e"]
+
+[ext_resource type="FontFile" uid="uid://tnkyrwrd7e1a" path="res://fonts/retrofont.ttf" id="1_6wen5"]
+[ext_resource type="Script" path="res://HUD/HOD.gd" id="1_p1r70"]
+
+[node name="Hod" type="CanvasLayer"]
+script = ExtResource("1_p1r70")
+
+[node name="scorelabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_6wen5")
+theme_override_font_sizes/font_size = 24
+text = "score: 0"
+
+[node name="HigescoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_6wen5")
+theme_override_font_sizes/font_size = 24
+text = "HigeScore: 0"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.490196, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.27451, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "rery, ste, go!!!!!!!!!!!!"
+
+[node name="scoreTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="scoreTimer" to="." method="_on_score_timer_timeout"]
