@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=3 uid="uid://dev83w6ccb3i2"]
+
+[ext_resource type="Script" path="res://examen_mishelle_final/examen_mishelle.gd" id="1_l48gs"]
+[ext_resource type="Texture2D" uid="uid://cgiwal5wt2fa5" path="res://timer.png" id="2_4i24l"]
+[ext_resource type="FontFile" uid="uid://dp7fmodgkkjp3" path="res://examen_mishelle_final/alarm clock.ttf" id="3_6l2gl"]
+
+[node name="Main" type="CanvasLayer"]
+script = ExtResource("1_l48gs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(596, 325.5)
+scale = Vector2(0.714642, 0.59477)
+texture = ExtResource("2_4i24l")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 763.0
+offset_top = 474.0
+offset_right = 877.0
+offset_bottom = 575.0
+scale = Vector2(0.89075, 0.935773)
+flat = true
+
+[node name="SecButton" type="Button" parent="."]
+offset_left = 517.0
+offset_top = 479.0
+offset_right = 631.0
+offset_bottom = 580.0
+scale = Vector2(0.833, 0.844389)
+theme_override_fonts/font = ExtResource("3_6l2gl")
+theme_override_font_sizes/font_size = 70
+text = "S"
+flat = true
+
+[node name="MinButton" type="Button" parent="."]
+offset_left = 301.0
+offset_top = 477.0
+offset_right = 415.0
+offset_bottom = 578.0
+scale = Vector2(0.837415, 0.831473)
+theme_override_fonts/font = ExtResource("3_6l2gl")
+theme_override_font_sizes/font_size = 70
+text = "M"
+flat = true
+
+[node name="ModeButton" type="Button" parent="."]
+offset_left = 1023.97
+offset_top = 358.874
+offset_right = 1137.97
+offset_bottom = 459.874
+scale = Vector2(0.171934, 0.213613)
+
+[node name="ClearButton" type="Button" parent="."]
+offset_left = 857.0
+offset_top = 51.0002
+offset_right = 971.0
+offset_bottom = 152.0
+scale = Vector2(0.710598, 0.488433)
+theme_override_font_sizes/font_size = 37
+text = "Clear"
+
+[node name="ModeLabel" type="Label" parent="."]
+offset_left = 795.0
+offset_top = 133.0
+offset_right = 848.0
+offset_bottom = 156.0
+scale = Vector2(2.06348, 2.17171)
+theme_override_fonts/font = ExtResource("3_6l2gl")
+text = "TiMER"
+
+[node name="StatusLabel" type="Label" parent="."]
+offset_left = 277.0
+offset_top = 141.0
+offset_right = 355.0
+offset_bottom = 164.0
+scale = Vector2(1.91601, 1.69801)
+theme_override_fonts/font = ExtResource("3_6l2gl")
+text = "STOPPED"
+
+[node name="SetLabel" type="Label" parent="."]
+offset_left = 988.965
+offset_top = 397.874
+offset_right = 1060.96
+offset_bottom = 430.874
+rotation = -1.59809
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6l2gl")
+theme_override_font_sizes/font_size = 31
+text = "MODE
+"
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 170.0
+offset_right = 911.0
+offset_bottom = 393.0
+theme_override_fonts/font = ExtResource("3_6l2gl")
+theme_override_font_sizes/font_size = 186
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="CLabel" type="Label" parent="."]
+offset_left = 820.0
+offset_top = 201.0
+offset_right = 898.0
+offset_bottom = 341.0
+theme_override_fonts/font = ExtResource("3_6l2gl")
+theme_override_font_sizes/font_size = 133
+text = "0"
+
+[node name="MainTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="OurName" type="Label" parent="."]
+offset_left = 471.0
+offset_top = 610.0
+offset_right = 641.0
+offset_bottom = 633.0
+scale = Vector2(1.09177, 1.29754)
+text = "By: Mishelle and Dany"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SecButton" to="." method="_on_sec_button_pressed"]
+[connection signal="pressed" from="MinButton" to="." method="_on_min_button_pressed"]
+[connection signal="pressed" from="ModeButton" to="." method="_on_mode_button_pressed"]
+[connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="timeout" from="MainTimer" to="." method="_on_main_timer_timeout"]
